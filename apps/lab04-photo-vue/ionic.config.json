@@ -1,0 +1,8 @@
+{
+  "name": "lab04-photo-vue",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite",
+  "base": "/mobileweb_/lab04_photo_vue/"
+}
