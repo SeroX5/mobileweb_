@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import type { RouteRecordRaw } from 'vue-router';
+import TabsPage from '../views/TabsPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/tabs/tab1'
   },
   {
-    path: '/tabs/',
+    path: '/tabs', // ✅ เอา / ท้ายออก
     component: TabsPage,
     children: [
       {
@@ -29,11 +29,11 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;
