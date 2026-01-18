@@ -4,7 +4,7 @@
       <ion-toolbar>
         <ion-title>Photo Gallery</ion-title>
         <div class="student-info">
-            โดย นางสาวณิชากานต์ คนกลาง รหัส: 663390384-9
+            โดย นางสาวณิชากานต์ คนกลาง รหัส: 663380384-9
         </div>
       </ion-toolbar>
     </ion-header>
