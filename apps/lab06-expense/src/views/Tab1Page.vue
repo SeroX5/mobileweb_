@@ -136,8 +136,8 @@ import {
 
 import { ref, computed } from "vue";
 import {
-  collection, getDocs, query, orderBy,
-  deleteDoc, doc
+  collection, query, orderBy,
+  deleteDoc, doc, onSnapshot 
 } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useRouter } from "vue-router";
@@ -151,18 +151,20 @@ const showDeleteAlert = ref(false);
 const selectedId = ref<string | null>(null);
 
 /* ===== Load Data ===== */
-const loadExpenses = async () => {
+const loadExpenses = () => {
   const q = query(
     collection(db, "expenses"),
     orderBy("createdAt", "desc")
   );
 
-  const snapshot = await getDocs(q);
-  expenses.value = snapshot.docs.map(doc => ({
-    id: doc.id,
-    ...doc.data()
-  }));
+  onSnapshot(q, (snapshot) => {
+    expenses.value = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+  });
 };
+
 
 /* ===== Summary ===== */
 const incomeTotal = computed(() =>
