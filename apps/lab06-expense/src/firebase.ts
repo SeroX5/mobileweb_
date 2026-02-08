@@ -1,5 +1,7 @@
+// src/firebase.ts
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+// ❌ analytics ไม่จำเป็นใน lab นี้ เอาออกได้
 
 const firebaseConfig = {
   apiKey: "AIzaSyAuQXq7CZ8HdskSuc-O4L6YQY4sCTXjtv4",
@@ -11,4 +13,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
+/** 🔥 สำคัญ */
 export const db = getFirestore(app);
