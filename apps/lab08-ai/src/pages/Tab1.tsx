@@ -70,12 +70,44 @@ const Tab1: React.FC = () => {
 
       <IonContent className="ion-padding ai-bg">
 
-        {/* Upload Section */}
+        {/* Upload Buttons */}
         <div className="upload-box">
-          <input type="file" accept="image/*" onChange={handleFileChange} />
+
+          <IonButton
+            expand="block"
+            className="upload-btn"
+            onClick={() => document.getElementById("fileInput")?.click()}
+          >
+            📁 Choose Image
+          </IonButton>
+
+          <IonButton
+            expand="block"
+            className="camera-btn"
+            onClick={() => document.getElementById("cameraInput")?.click()}
+          >
+            📷 Take Photo
+          </IonButton>
+
+          <input
+            id="fileInput"
+            type="file"
+            accept="image/*"
+            hidden
+            onChange={handleFileChange}
+          />
+
+          <input
+            id="cameraInput"
+            type="file"
+            accept="image/*"
+            capture="environment"
+            hidden
+            onChange={handleFileChange}
+          />
         </div>
 
-        {/* Image Preview */}
+        {/* Preview */}
         {preview && (
           <div className="preview">
             <img src={preview} alt="preview" />
@@ -104,7 +136,7 @@ const Tab1: React.FC = () => {
         {result && (
           <IonCard className="result-card">
             <IonCardHeader>
-              <IonCardTitle >🧠 AI Result</IonCardTitle>
+              <IonCardTitle>🧠 AI Result</IonCardTitle>
             </IonCardHeader>
 
             <IonCardContent>
