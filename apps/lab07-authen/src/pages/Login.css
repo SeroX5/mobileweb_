@@ -1,0 +1,130 @@
+/* ===== Background Gradient ===== */
+.login-content {
+  --background: linear-gradient(-45deg, #000814, #001d3d, #003566, #001233);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Center content */
+.login-content::part(scroll) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== Gradient Animation ===== */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Glass Login Box ===== */
+.login-box {
+  width: 90%;
+  max-width: 400px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0, 150, 255, 0.4);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ===== Fade In Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Floating Icon ===== */
+.login-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ===== Title ===== */
+.login-title {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login-subtitle {
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+/* ===== Input Wrapper ===== */
+.input-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* ===== Input Style ===== */
+.custom-input {
+  width: 100%;
+  margin-bottom: 20px;
+  --background: rgba(255, 255, 255, 0.1);
+  --color: white;
+  --placeholder-color: #ccc;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+/* Glow when focused */
+.custom-input.ion-focused {
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.8);
+  transition: 0.3s;
+}
+
+/* ===== All Buttons Full Width ===== */
+ion-button {
+  width: 100%;
+  margin-top: 10px;
+  --border-radius: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+/* Primary Login Button */
+.login-button {
+  --background: linear-gradient(90deg, #0077b6, #00b4d8);
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.5);
+}
+
+.login-button:active {
+  transform: scale(0.97);
+}
+
+/* ===== Divider ===== */
+.divider {
+  margin: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ===== Error Text ===== */
+.error-text {
+  margin-top: 15px;
+  text-align: center;
+}
