@@ -1,0 +1,76 @@
+.ai-bg {
+  min-height: 100%;
+  color: white;
+}
+
+.ai-toolbar {
+  --background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+.upload-box {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.preview img {
+  width: 260px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.analyze-btn {
+  margin-top: 10px;
+  --background: linear-gradient(90deg, #ff512f, #dd2476);
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.loading-box {
+  text-align: center;
+  margin-top: 25px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.result-card {
+  margin-top: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.result-section {
+  margin-bottom: 15px;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}

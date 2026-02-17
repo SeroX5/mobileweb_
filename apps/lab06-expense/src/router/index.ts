@@ -1,11 +1,10 @@
-import { createRouter, createWebHashHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue';
+import { createRouter, createWebHashHistory } from '@ionic/vue-router'
+import TabsPage from '../views/TabsPage.vue'
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: '/',
-    redirect: '/tabs/tab1' // leading / สำหรับ Hash mode
+    redirect: '/tabs/tab1'
   },
   {
     path: '/tabs/',
@@ -13,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: 'tab1' // relative path สำหรับ children
+        redirect: 'tab1'
       },
       {
         path: 'tab1',
@@ -29,11 +28,11 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes
-});
+})
 
-export default router;
+export default router
